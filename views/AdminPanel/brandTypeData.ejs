@@ -1,0 +1,18 @@
+<div class="col-12">
+    <label class="form-label">Select Brand </label>
+    <select name="Brand_id" id="Brand_id" class="form-select">
+        <option value="">Select Brand</option>
+        <% for(b of brand) { %>
+            <option value="<%= b.id %>"><%= b.Brand_name %></option>
+        <% } %>
+    </select>
+</div>
+<div class="col-12 mt-3">
+    <label class="form-label">Select Type </label>
+    <select name="Type_id" id="Type_id" class="form-select">
+        <option value="">Select Type</option>
+        <% for(t of type) { %>
+            <option value="<%= t.id %>"><%= t.Type %></option>
+        <% } %>
+    </select>
+</div>

@@ -1,0 +1,131 @@
+<%- include('header') %>
+
+
+        <!-- start page content wrapper-->
+        <div class="page-content-wrapper">
+          <!-- start page content-->
+         <div class="page-content">
+
+          <!--start breadcrumb-->
+          <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+            <div class="breadcrumb-title pe-3">Categories</div>
+            <div class="ps-3">
+              <nav aria-label="breadcrumb">
+                <ol class="breadcrumb mb-0 p-0 align-items-center">
+                  <li class="breadcrumb-item"><a href="javascript:;"><ion-icon name="home-outline"></ion-icon></a>
+                  </li>
+                  <li class="breadcrumb-item active" aria-current="page">Insert Sub Category</li>
+                </ol>
+              </nav>
+            </div>
+            <div class="ms-auto">
+              <div class="btn-group">
+                <button type="button" class="btn btn-outline-primary">Settings</button>
+                <button type="button" class="btn btn-outline-primary split-bg-primary dropdown-toggle dropdown-toggle-split" data-bs-toggle="dropdown">	<span class="visually-hidden">Toggle Dropdown</span>
+                </button>
+                <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end">	<a class="dropdown-item" href="javascript:;">Action</a>
+                  <a class="dropdown-item" href="javascript:;">Another action</a>
+                  <a class="dropdown-item" href="javascript:;">Something else here</a>
+                  <div class="dropdown-divider"></div>	<a class="dropdown-item" href="javascript:;">Separated link</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!--end breadcrumb-->
+
+
+          <div class="row">
+            <div class="col-xl-8 mx-auto">
+            
+  
+              <div class="card">
+                <div class="card-body d-flex">
+                  <div class="border p-3 rounded">
+                  <h6 class="mb-0 text-uppercase">Add Sub Category</h6>
+                  <hr>
+                  <form class="row g-3" action="/product/insertProduct" method="post" enctype="multipart/form-data" >
+                    <div class="col-12">
+                      <label class="form-label">Select Category</label>
+                      <select name="Cat_id" id="Cat_id" class="form-select" onchange="SubData()" >
+                        <option value="">Select Category</option>
+                        <% for(var c of cat) { %>
+                        <option value="<%= c.id %>"><%= c.Category_Name %></option>
+                        <% } %>  
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Select Sub Category</label>
+                      <select name="SubCat_id" id="SubCat_id" class="form-select" onchange="exCatData()">
+                        <option value="">Select Sub Category</option> 
+                      </select>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Select Extra Category</label>
+                      <select name="ExCat_id" id="ExCat_id" class="form-select" onchange="btData()">
+                        <option value="">Select Extra Category</option> 
+                      </select>
+                    </div>
+                    <div id="btData">
+                        <div class="col-12">
+                            <label class="form-label">Select Brand </label>
+                            <select name="Brand_id" id="Brand_id" class="form-select">
+                              <option value="">Select Brand</option> 
+                            </select>
+                          </div>
+                          <div class="col-12 mt-3">
+                            <label class="form-label">Select Type </label>
+                            <select name="Type_id" id="Type_id" class="form-select">
+                              <option value="">Select Type</option> 
+                            </select>
+                          </div>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Product Name</label>
+                      <input type="text" class="form-control" name="product_name" placeholder="Enter Product Name">
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Product Price</label>
+                      <input type="text" class="form-control" name="product_price" placeholder="Enter Product Name">
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Product Old Price</label>
+                      <input type="text" class="form-control" name="product_old_price" placeholder="Enter Product Name">
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label">Product Description</label>
+                      <textarea name="description" class="form-control" id="" cols="15" rows="4" placeholder="Product Description"></textarea>
+                    </div>
+                    <label class="form-check-label" for="flexRadioDefault1">Rating</label>
+                    <div class="form-group">
+                        <input class="form-check-input" type="radio" name="rating" value="1" id="flexRadioDefault1">  1
+                        <input class="form-check-input" type="radio" name="rating" value="2"  id="flexRadioDefault1"> 2
+                        <input class="form-check-input" type="radio" name="rating" value="3"  id="flexRadioDefault1"> 3
+                        <input class="form-check-input" type="radio" name="rating" value="4"  id="flexRadioDefault1"> 4
+                        <input class="form-check-input" type="radio" name="rating" value="5"  id="flexRadioDefault1"> 5
+                    </div>
+                    <label class="form-check-label" for="flexRadioDefault1">Choose Product Single Image</label>
+                      <div class="form-group d-flex  gap-2">
+                        <input class="form-control" type="file" id="gridCheck3-c" name="singlePr">
+                      </div>
+                    <label class="form-check-label" for="flexRadioDefault1">Choose Product Multiple Image</label>
+                      <div class="form-group d-flex  gap-2">
+                        <input class="form-control" type="file" id="gridCheck3-c" name="multiPr" multiple>
+                      </div>
+                    <div class="col-12">
+                      <div class="d-grid">
+                        <button type="submit" class="btn btn-primary">Add</button>
+                      </div>
+                    </div>
+                  </form>
+                </div>
+                </div>
+              </div>
+  
+            </div>
+          </div>
+             
+
+          </div>
+          <!-- end page content-->
+         </div>
+         <%- include('footer') %>

@@ -1,0 +1,90 @@
+<%- include('header') %>
+
+    <!-- start page content wrapper-->
+    <div class="page-content-wrapper">
+        <!-- start page content-->
+        <div class="page-content">
+
+            <!--start breadcrumb-->
+            <div class="page-breadcrumb d-none d-sm-flex align-items-center mb-3">
+                <div class="breadcrumb-title pe-3">Admins</div>
+                <div class="ps-3">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mb-0 p-0 align-items-center">
+                            <li class="breadcrumb-item"><a href="javascript:;">
+                                    <ion-icon name="home-outline"></ion-icon>
+                                </a>
+                            </li>
+                            <li class="breadcrumb-item active" aria-current="page">All Admins</li>
+                        </ol>
+                    </nav>
+                </div>
+                <div class="ms-auto">
+                    <div class="btn-group">
+                        <button type="button" class="btn btn-outline-primary">Settings</button>
+                        <button type="button"
+                            class="btn btn-outline-primary split-bg-primary dropdown-toggle dropdown-toggle-split"
+                            data-bs-toggle="dropdown"> <span class="visually-hidden">Toggle Dropdown</span>
+                        </button>
+                        <div class="dropdown-menu dropdown-menu-right dropdown-menu-lg-end"> <a class="dropdown-item"
+                                href="javascript:;">Action</a>
+                            <a class="dropdown-item" href="javascript:;">Another action</a>
+                            <a class="dropdown-item" href="javascript:;">Something else here</a>
+                            <div class="dropdown-divider"></div> <a class="dropdown-item" href="javascript:;">Separated
+                                link</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!--end breadcrumb-->
+
+
+            <div class="row">
+                <div class="col-xl-12 mx-auto">
+                    <h6 class="mb-0 text-uppercase">Admin Details</h6>
+                    <hr>
+                    <div class="card">
+                        <div class="card-body">
+                            <table class="table mb-0 table-dark table-striped">
+                                <thead>
+                                    <tr>
+                                        <th scope="col"> <input type="checkbox"> No.</th>
+                                        <th scope="col">Name</th>
+                                        <th scope="col">Email</th>
+                                        <th scope="col">Phone</th>
+                                        <th scope="col">Gender</th>
+                                        <th scope="col">Hobby</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <% var i = 1; for(var a of data) { %>
+                                        <tr>
+                                            <th scope="row"><input type="checkbox"> <%= i %></th>
+                                            <td><%= a.name %></td>
+                                            <td><%= a.email %></td>
+                                            <td><%= a.phone %></td>
+                                            <td><%= a.gender %></td>
+                                            <td><%= a.hobby %></td>
+                                            <td><%= a.isActive %></td>
+                                        </tr>
+                                    <% i++;} %>    
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- end page content-->
+    </div>
+
+
+
+    <!--Start Back To Top Button-->
+    <a href="javaScript:;" class="back-to-top">
+        <ion-icon name="arrow-up-outline"></ion-icon>
+    </a>
+    <!--End Back To Top Button-->
+
+    <%- include('footer') %>
